@@ -16,8 +16,10 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.address %></td>
-        <td><%= user.age %></td>
+        <td><%= "#{user.age}歳" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @users %>
