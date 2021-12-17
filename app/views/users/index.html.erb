@@ -1,0 +1,31 @@
+<h1>ユーザー一覧</h1>
+
+<div>
+  <%= link_to "新規登録", new_user_path, class: "btn btn-primary mb-3" %>
+</div>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>メールアドレス</th>
+      <th>住所</th>
+      <th>年齢</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.address %></td>
+        <td><%= "#{user.age}歳" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="mx-auto mt-3 pagenate-width">
+  <%= paginate @users %>
+</div>
