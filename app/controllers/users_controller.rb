@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show]
+  before_action :set_user, only: %i[show edit update]
 
   def index
     @users = User.all.order(created_at: :desc).page(params[:page]).per(15)
   end
 
-  def show
-  end
+  def show;end
 
   def new
     @user = User.new
@@ -19,6 +18,16 @@ class UsersController < ApplicationController
       redirect_to users_path, notice: "ユーザー 「#{@user.name}」を登録しました"
     else
       render :new
+    end
+  end
+
+  def edit;end
+
+  def update
+    if @user.update(user_params)
+      redirect_to users_path, notice: "ユーザー「#{@user.name}」の情報を更新しました"
+    else
+      render :edit
     end
   end
 
