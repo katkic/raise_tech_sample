@@ -12,17 +12,19 @@
       <th>住所</th>
       <th>年齢</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.address %></td>
         <td><%= "#{user.age}歳" %></td>
         <td><%= link_to "編集", edit_user_path(user), class: "btn btn-success" %></td>
+        <td><%= link_to "削除", user, method: :delete, data: { confirm: "ユーザー「#{user.name}」を削除します。よろしいですか？" }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

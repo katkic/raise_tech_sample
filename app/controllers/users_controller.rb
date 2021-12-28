@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update destroy]
 
   def index
     @users = User.all.order(created_at: :desc).page(params[:page]).per(15)
@@ -29,6 +29,11 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to users_path, notice: "ユーザー「#{@user.name}」を削除しました"
   end
 
   private
