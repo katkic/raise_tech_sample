@@ -1,6 +1,7 @@
 <div class="input-container">
   <h1 class="mb-5">ユーザー詳細</h1>
 
+  <p><%= image_tag set_image(@user.picture), class: "cover140 mr-3" %></p>
   <p>名前：<%= @user.name %></p>
   <p>メールアドレス：<%= @user.email %></p>
   <p>住所：<%= @user.address %></p>
