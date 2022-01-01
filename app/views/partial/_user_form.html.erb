@@ -35,6 +35,10 @@
     <p><%= image_tag set_image(@user.picture),
            alt: 'ユーザーアイコン', class: 'cover140', id: :user_picture_prev %></p>
     <p><%= f.file_field :picture, accept: "image/jpeg, image/png, image/gif", id: :user_picture %><p>
+
+    <% if @user.picture.present? %>
+      <p class="mt-2"><label><%= f.check_box :remove_picture, id: :remove_picture, class: "mr-1" %>画像を削除する</label></p>
+    <% end %>
   </div>
     
   <div class="btn-toolbar mt-5">
