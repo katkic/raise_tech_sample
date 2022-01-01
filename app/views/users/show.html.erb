@@ -1,23 +1,26 @@
-<div class="input-container">
-  <h1 class="mb-5">ユーザー詳細</h1>
+<div class="user-container">
+  <div class="user-show-container">
+    <h1 class="mb-5">ユーザー詳細</h1>
 
-  <p><%= image_tag set_image(@user.picture), class: "cover140 mr-3" %></p>
-  <p>名前：<%= @user.name %></p>
-  <p>メールアドレス：<%= @user.email %></p>
-  <p>住所：<%= @user.address %></p>
-  <p>年齢：<%= @user.age %>歳</p>
+    <p><%= image_tag set_image(@user.picture), class: "cover150" %></p>
+    <p>名前：<%= @user.name %></p>
+    <p>メールアドレス：<%= @user.email %></p>
+    <p>住所：<%= @user.address %></p>
+    <p>年齢：<%= @user.age %>歳</p>
 
-  <div class="btn-toolbar">
-    <div class="btn-group">
-      <%= link_to "戻る", users_path, class: "btn btn-secondary" %>
-    </div>
-
-    <div class="btn-group ml-auto">
-      <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
-    </div>
-
-    <div class="btn-group ml-auto">
-      <td><%= link_to "削除", @user, method: :delete, data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？" }, class: "btn btn-danger" %></td>
-    </div>
-  </div>
-</div><!-- input-container -->
+    <div class="btn-toolbar">
+      <div class="btn-group">
+        <%= link_to "戻る", users_path, class: "btn btn-secondary" %>
+      </div><!-- btn-group -->
+  
+      <div class="btn-group ml-auto">
+        <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
+      </div><!-- btn-group ml-auto -->
+  
+      <div class="btn-group ml-auto">
+        <td><%= link_to "削除", @user, method: :delete,
+                data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？" }, class: "btn btn-danger" %></td>
+      </div><!-- btn-group ml-auto -->
+    </div><!-- btn-toolbar -->
+  </div><!-- user-show-container -->
+</div><!-- user-container -->
