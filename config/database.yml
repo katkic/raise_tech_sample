@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: raise_tech_sample_production
+  database: raise_tech_sample
   username: raise_tech_sample
-  password: <%= ENV['RAISE_TECH_SAMPLE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['AWS_RAISE_TECH_SAMPLE_DATABASE_PASSWORD'] %>
