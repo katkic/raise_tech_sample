@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path, notice: "ユーザー「#{@user.name}」の情報を更新しました"
+      redirect_to user_path, notice: "ユーザー「#{@user.name}」の情報を更新しました"
     else
       render :edit
     end

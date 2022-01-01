@@ -33,7 +33,7 @@
   <div class="form-group">
     <label>アイコン</label>
     <p><%= image_tag set_image(@user.picture),
-           alt: 'ユーザーアイコン', class: 'cover140', id: :user_picture_prev %></p>
+           alt: 'ユーザーアイコン', class: 'cover150', id: :user_picture_prev %></p>
     <p><%= f.file_field :picture, accept: "image/jpeg, image/png, image/gif", id: :user_picture %><p>
 
     <% if @user.picture.present? %>
