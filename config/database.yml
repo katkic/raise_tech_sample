@@ -52,3 +52,4 @@ production:
   database: raise_tech_sample
   username: raise_tech_sample
   password: <%= ENV['AWS_RAISE_TECH_SAMPLE_DATABASE_PASSWORD'] %>
+  host: <%= ENV['AWS_RAISE_TECH_SAMPLE_DATABASE_HOST'] %>
